@@ -1,0 +1,16 @@
+@font-face {
+    font-family: Midiet;
+    src: url("../fonts/Midiet_Sans_Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Midiet;
+    font-weight: bold;
+    src: url("../fonts/Midiet_Sans_Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: Midiet;
+    font-weight:  normal;
+    font-style: italic;
+    src: url("../fonts/Midiet_Sans_Italic_Medium.otf") format("opentype");
+}
