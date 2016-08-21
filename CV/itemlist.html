@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+        <link href="./css/font.css" rel='stylesheet' type='text/css'>
+        <script src="./js/jquery-3.1.0.min.js"></script>
+        <script src="./js/bootstrap.js"></script> 
+        <script src='cart.js'></script>
+        <script>
+            function countitem(){
+                var c=getCart();
+                var co=0;
+                for(k in c)
+                {
+                    if(c[k]!=null)co++;
+                }
+                document.getElementById("cartitems").innerHTML=co;
+            }
+            
+            refresh();
+        </script>
+        
+    </head>
+    <body onload="countitem();" style=" font-family: Midiet;">
+        <div class="jumbotron" style="background-color: #8a6d3b; color: #fff; text-align: center;">
+            <a href="shoppingcart.html" style="float:right; font-size: large; margin-right: 20px; color: #fff;"><span class="glyphicon glyphicon-shopping-cart">Cart:&nbsp;</span><span class="badge" id="cartitems"></span></a>
+            <h1>Item List</h1>
+
+
+        </div>
+        <div class="container-fluid" >
+
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item1" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">Item 1</span>
+                    <input type="text" id="1" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon1">
+                    <button class="btn btn-info" onclick= "add('1');" >Add</button>
+                </div>
+                
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item2" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon2">Item 2</span>
+                    <input type="text" id="2" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon2">
+                    <button class="btn btn-info" onclick= "add('2');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item3" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">Item 3</span>
+                    <input type="text" id="3" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon3">
+                    <button class="btn btn-info" onclick= "add('3');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item4" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon4">Item 4</span>
+                    <input type="text" id="4" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon4">
+                    <button class="btn btn-info" onclick= "add('4');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item5" height="150" width="150">
+                <br/><br/>
+               <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon5">Item 5</span>
+                    <input type="text" id="5" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon5">
+                    <button class="btn btn-info" onclick= "add('5');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item6" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon6">Item 6</span>
+                    <input type="text" id="6" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon6">
+                    <button class="btn btn-info" onclick= "add('6');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item7" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon7">Item 7</span>
+                    <input type="text" id="7" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon7">
+                    <button class="btn btn-info" onclick= "add('7');" >Add</button>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item8" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon8">Item 8</span>
+                    <input type="text" id="8" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon8">
+                    <button class="btn btn-info" onclick= "add('8');" >Add</button>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item9" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon9">Item 9</span>
+                    <input type="text" id="9" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon9">
+                    <button class="btn btn-info" onclick= "add('9');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item10" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon10">Item 10</span>
+                    <input type="text" id="10" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon10">
+                    <button class="btn btn-info" onclick= "add('10');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item11" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon11">Item 11</span>
+                    <input type="text" id="11" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon11">
+                    <button class="btn btn-info" onclick= "add('11');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item12" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon12">Item 12</span>
+                    <input type="text" id="12" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon12">
+                    <button class="btn btn-info" onclick= "add('12');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item13" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon13">Item 13</span>
+                    <input type="text" id="13" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon13">
+                    <button class="btn btn-info" onclick= "add('13');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item14" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon14">Item 14</span>
+                    <input type="text" id="14" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon14">
+                    <button class="btn btn-info" onclick= "add('14');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item15" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon15">Item 15</span>
+                    <input type="text" id="15" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon15">
+                    <button class="btn btn-info" onclick= "add('15');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item16" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon16">Item 16</span>
+                    <input type="text" id="16" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon16">
+                    <button class="btn btn-info" onclick= "add('16');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item17" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon17">Item 17</span>
+                    <input type="text" id="17" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon17">
+                    <button class="btn btn-info" onclick= "add('17');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item18" height="150" width="150">
+                <br/><br/>
+              <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon18">Item 18</span>
+                    <input type="text" id="18" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon18">
+                    <button class="btn btn-info" onclick= "add('18');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item19" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon19">Item 19</span>
+                    <input type="text" id="19" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon19">
+                    <button class="btn btn-info" onclick= "add('19');" >Add</button>
+                </div>
+            </div><div class="col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 10px; margin-top: 10px;">
+                <img src="item.png" alt="item20" height="150" width="150">
+                <br/><br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon20">Item 20</span>
+                    <input type="text" id="20" class="form-control" style="width:50px;" placeholder="Qty" aria-describedby="basic-addon20">
+                    <button class="btn btn-info" onclick= "add('20');">Add</button>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            function add(id){
+                addItem(id,document.getElementById(id).value);
+                countitem();
+            }
+        </script>
+    </body>
+</html>

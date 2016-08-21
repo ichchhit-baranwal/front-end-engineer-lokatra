@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./css/bootstrap.css" rel='stylesheet' type='text/css'>
+        <link href="./css/font.css" rel='stylesheet' type='text/css'>
+        <script src="./js/jquery-3.1.0.min.js"></script>
+        <script src="./js/bootstrap.js"></script> 
+        <script src='cart.js'></script>
+        <script>
+            function update(key){
+               console.log(document.getElementById(key).value);
+                changeQuantity(key,document.getElementById(key).value);
+            }
+            function deleteitem(key){
+                remove(key);
+                populatelist();
+            }
+            function populatelist(){
+                var c=getCart();
+                var container=document.getElementById('container');
+                if(c.length===0)
+                    container.innerHTML="<center><h1>No items found in the cart!!</h1></center>";
+                else{
+                    var innerpart="";
+                    for(k in c){
+                        if(c[k]!=null)
+                        innerpart=innerpart+"<div class='panel panel-default'><div class='panel-body'><h3>Item "+k+"</h3><div class='input-group'><input type='text' value='"+c[k]+"' id='"+k+"' class='form-control' placeholder='New Qty' style='width:80px;'>&nbsp;<button class='btn btn-info' onclick=\"update('"+k+"');\">Change</button>&nbsp;<button class='btn btn-info' onclick=\"deleteitem('"+k+"')\">Delete</button></div></div></div>";
+                    }
+                    container.innerHTML=innerpart;
+                }
+            }
+            function reset(){
+                clear();
+            }
+            refresh();
+        </script>
+    </head>
+    <body onload="populatelist();" style=" font-family: Midiet;">
+        <div class="jumbotron" style="background-color: #8a6d3b; color: #fff; text-align: center;">
+            <button class="btn btn-info" onclick="reset();" style="float:right; font-size: large; margin-right: 20px; color: #fff;"><span class="glyphicon glyphicon-shopping-cart">_Empty_Cart!!</span></button>
+            <h1>Shopping Cart</h1>
+        </div>
+        <div class='container-fluid' id='container'>
+        </div>
+    </body>
+</html>
